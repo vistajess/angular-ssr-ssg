@@ -13,6 +13,7 @@ export function app(): express.Express {
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
   const commonEngine = new CommonEngine();
+  server.use(express.json());
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
